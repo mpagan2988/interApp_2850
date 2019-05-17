@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:inter_app"
+             x:Class="inter_app.MainPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="style.css"/>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout>
+            <Image Source="interLoan_3.png"/>
+            <Label Text="Porfavor, ingresa tus credenciales"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+
+            <Entry Placeholder="Numero de Empleado"
+                   HorizontalOptions="Center"
+                   x:Name="user"/>
+
+            <Entry Placeholder="Contrasena"
+                   HorizontalOptions="Center"
+                   IsPassword="True"
+                   x:Name="pass"/>
+
+            <Button x:Name="bntLogIn"
+                        Text="Submit"
+                        Clicked="BntLogIn_Clicked"
+                    BackgroundColor="Green"/>
+        </StackLayout>
+        </ScrollView>
+</ContentPage>

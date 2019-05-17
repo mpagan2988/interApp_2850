@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="inter_app.Reservar_Equipo">
+    <ContentPage.Resources>
+        <StyleSheet Source="style.css"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Solicitud para reservacion de equipo"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+                <DatePicker MinimumDate="01/01/2019"
+                        MaximumDate="12/31/2030"
+                            x:Name="date"/>
+
+                <Entry Placeholder="Nombre del profesor"
+                       x:Name="empName"/>
+                
+                <Entry Keyboard="Numeric" 
+                       Placeholder="Numero del salon"
+                       x:Name="room"/>
+
+                <Label Text="Equipo a resrvarse:"
+                   VerticalOptions="Center"
+                   HorizontalOptions="CenterAndExpand"/>
+                
+                <!--
+                <Entry Placeholder="Equipo a utilizarse"
+                       HeightRequest="50"/>
+                -->
+                
+                <!-- Lista para equipo a utilozarse -->
+                <controls:CheckBox DefaultText ="Portatil"
+                                   HorizontalOptions ="FillAndExpand"
+                                   FontSize="13"
+                                   FontName="AmericanTypeWriter"/>
+                <controls:CheckBox DefaultText ="Cable VGA"
+                                   HorizontalOptions ="FillAndExpand"
+                                   FontSize="13"
+                                   FontName="AmericanTypeWriter"/>
+                <controls:CheckBox DefaultText ="Cable HDMI"
+                                   HorizontalOptions ="FillAndExpand"
+                                   FontSize="13"
+                                   FontName="AmericanTypeWriter"/>
+                <controls:CheckBox DefaultText ="Proyector Viewsonic"
+                                   HorizontalOptions ="FillAndExpand"
+                                   FontSize="13"
+                                   FontName="AmericanTypeWriter"/>
+
+                <Label Text="Fecha de uso:"/>
+                <DatePicker MinimumDate="01/01/2019"
+                        MaximumDate="12/31/2030"/>
+
+                <Label Text="Hora de uso:"
+                       x:Name="fromTime"/>
+                <Label Text="Desde:"/>
+                <TimePicker Time="12:00:00"/>
+                
+                <Label Text="Hasta:"/>
+                <TimePicker Time="12:00:00"
+                            x:Name="toTime"/>
+
+                <Label Text="Firma del solicitante:"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"/>
+                <forms:SignaturePadCanvasView BackgroundColor="White"
+                                              WidthRequest="150"
+                                              HeightRequest="250"
+                                              StrokeColor="Black"
+                                              StrokeWidth="3"
+                                              x:Name="Signature_Pad"/>
+                <Button Text="Clear"
+                        Clicked="ClearButton_Clicked"
+                        BackgroundColor="Yellow"/>
+
+                <Label Text="Los equipos seran recogidos por el profesor(a) en la oficina del Centro de Servicios y Desarollo Tecnologico. Luego de finalizado el horario de uso el profesor(a) debera entregarlo  en la oficina antes mencionada."/>
+
+                <!-- Submit button to send data to the email-->
+                <Button x:Name="SubmitData"
+                        Text="Submit"
+                        Clicked="SubmitData_Clicked"
+                        BackgroundColor="Green"/>
+
+                <!-- Cambiar la reservacion-->
+                <Button x:Name="changeRes"
+                        Text="Cambiar Reservacion"
+                        Clicked="ChangeRes_Clicked"
+                        BackgroundColor="Green"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

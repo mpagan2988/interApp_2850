@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inter_app.escoger_Reservacion">
+    <ContentPage.Resources>
+        <StyleSheet Source="style.css"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Que deseas solicitar?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            <!-- Boton para reservar un salon -->
+            <Button x:Name="bntSalon"
+                    Text="Reservar Salon"
+                    Clicked="BntSalon_Clicked"/>
+            
+            <!-- Boton para reservar equipo del centro de computos-->
+            <Button x:Name="bntEquipo"
+                    Text="Reservar Equipo"
+                    Clicked="BntEquipo_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

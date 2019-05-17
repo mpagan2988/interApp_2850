@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="inter_app.Reservar_Salon">
+    <ContentPage.Resources>
+        <StyleSheet Source="style.css"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Solicitud Para Reservar Salones de CSDT"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"/>
+
+                <DatePicker MinimumDate="01/01/2019"
+                        MaximumDate="12/31/2030"
+                            x:Name="fechaDiaE"/>
+
+                <Entry Placeholder="Nombre del solicitante"
+                       x:Name="nombreSolicitanteE"/>
+
+                <Entry Keyboard="Numeric" Placeholder="Numero del salon"
+                       x:Name="numSalonE"/>
+
+                <Label Text="Materiales y/o equipo a utilizarse"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"
+                       x:Name="matYEquipoE"/>
+
+                <Entry Placeholder="Programacion"
+                       HeightRequest="100"
+                       x:Name="progE"/>
+
+                <Entry Placeholder="Equipo"
+                       HeightRequest="100"
+                       x:Name="equipoE"/>
+
+                <Label Text="Fecha de uso:"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <DatePicker MinimumDate="01/01/2019"
+                            MaximumDate="12/31/2030"
+                            x:Name="fechaUsoE"/>
+                
+                <TimePicker Time="12:00:00"
+                            x:Name="horaUsoE"/>
+
+                <Label Text="Firma del solicitante:"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <forms:SignaturePadCanvasView BackgroundColor="White"
+                                              WidthRequest="150"
+                                              HeightRequest="250"
+                                              StrokeColor="Black"
+                                              StrokeWidth="3"
+                                              x:Name="Signature_Pad"/>
+                <Button Text="Clear"
+                        Clicked="ClearButton_Clicked"
+                        BackgroundColor="Yellow"/>
+
+                <!-- Submit button to send data to the email-->
+                <Button x:Name="SubmitData"
+                        Text="Submit"
+                        Clicked="SubmitData_Clicked"
+                        BackgroundColor="Green"/>
+                
+                <!-- Cambiar la reservacion-->
+                <Button x:Name="changeRes"
+                        Text="Cambiar Reservacion"
+                        Clicked="ChangeRes_Clicked"
+                        BackgroundColor="Green"/>
+                
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
